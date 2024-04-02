@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "bt_update_disable_icon.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

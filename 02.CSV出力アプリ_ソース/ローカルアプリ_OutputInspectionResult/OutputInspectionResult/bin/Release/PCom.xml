@@ -1,0 +1,747 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PCom
+</name>
+</assembly>
+<members>
+<member name="T:PCom.My.Resources.Resources">
+<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member>
+<member name="P:PCom.My.Resources.Resources.ResourceManager">
+<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member>
+<member name="P:PCom.My.Resources.Resources.Culture">
+<summary>
+  すべてについて、現在のスレッドの CurrentUICulture プロパティをオーバーライドします
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member>
+<member name="P:PCom.My.Resources.Resources.String1">
+<summary>
+   に類似しているローカライズされた文字列を検索します。
+</summary>
+</member>
+<member name="T:PCom.AC">
+ <summary>
+ 電源制御クラス
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.AC.Shutdown(System.String,PCom.AC.ShutdownOrReboot)">
+ <summary>
+ PCシャットダウン
+ </summary>
+ <param name="computerName"></param>
+ <param name="sr"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.AC.WakeUp(System.String,System.String,System.Int32)">
+ <summary>
+ PC起動
+ </summary>
+ <param name="ip"></param>
+ <param name="mac"></param>
+ <param name="port"></param>
+ <remarks></remarks>
+</member>
+<member name="P:PCom.BaseDB.ConnectString">
+ <summary>
+ データベース接続文字列
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.BaseDB.CheckParameter(System.Collections.Generic.Dictionary{System.String,System.Object})">
+========================================================================
+ <summary>
+ パラメータチェック
+ </summary>
+ <remarks>
+ 処理前に必要なチェック処理を実装します
+ </remarks>
+========================================================================
+</member>
+<member name="M:PCom.BaseDB.DoActionQuery(System.Collections.Generic.Dictionary{System.String,System.Object})">
+========================================================================
+ <summary>
+ 登録用クエリの編集
+ </summary>
+ <remarks>
+ 登録・更新処理を発行するクエリを編集します
+ </remarks>
+========================================================================
+</member>
+<member name="M:PCom.BaseDB.DoSelectQuery(System.Collections.Generic.Dictionary{System.String,System.Object})">
+========================================================================
+ <summary>
+ 検索クエリの編集
+ </summary>
+ <remarks>
+ 検索処理を発行するクエリを編集します
+ </remarks>
+========================================================================
+</member>
+<member name="M:PCom.BaseDB.Init">
+========================================================================
+ <summary>
+ 前処理
+ </summary>
+ <remarks>
+ 処理の先頭で必要となる前処理を実施します。
+ 規定クラスでは処理は記載しません。派生クラスで独自処理が必要な場合のみ
+ 処理を実装します
+ </remarks>
+========================================================================
+</member>
+<member name="M:PCom.BaseDB.CommandFinalize">
+========================================================================
+ <summary>
+ 業務後処理
+ </summary>
+ <remarks>
+ コミット完了前に実行する後処理
+ 規定クラスでは処理は記載しません。派生クラスで独自処理が必要な場合のみ
+ 処理を実装します
+ </remarks>
+========================================================================
+</member>
+<member name="M:PCom.BaseDB.FuncFinalize">
+========================================================================
+ <summary>
+ 業務後処理
+ </summary>
+ <remarks>
+ コミット完了後に実行する後処理
+ 規定クラスでは処理は記載しません。派生クラスで独自処理が必要な場合のみ
+ 処理を実装します
+ </remarks>
+========================================================================
+</member>
+<member name="M:PCom.BaseDB.Complete(System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ 処理の実行
+ </summary>
+ <param name="input"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.BaseDB.ExecuteReader(System.Object)">
+ <summary>
+ 参照クエリの発行
+ </summary>
+ <param name="input"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.BaseDB.ExecuteReaderWithTransaction(System.Object)">
+ <summary>
+ 参照クエリの発行(トランザクション付)
+ </summary>
+ <param name="input"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.BaseDB.ExecuteScalar(System.Object)">
+ <summary>
+ 参照クエリの発行(スカラクエリ)
+ </summary>
+ <param name="input"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.BaseDB.ExecuteScalar(System.Data.SqlClient.SqlCommand)">
+========================================================================
+ <summary>
+ 参照クエリの発行(スカラクエリ)
+ </summary>
+ <param name="objCmd">SQLコマンド</param>
+ <remarks>
+ レコード件数やシーケンス発行等段いつの結果を取得する選択クエリの発行を行います。
+ 発行結果はobjectに格納して返却します
+ </remarks>
+========================================================================
+</member>
+<member name="M:PCom.BaseDB.Finalize">
+ <summary>
+ デストラクタ
+ </summary>
+</member>
+<member name="M:PCom.Fnc.LenB(System.String)">
+ -----------------------------------------------------------------------------------------
+ <summary>
+     半角 1 バイト、全角 2 バイトとして、指定された文字列のバイト数を返します。</summary>
+ <param name="stTarget">
+     バイト数取得の対象となる文字列。</param>
+ <returns>
+     半角 1 バイト、全角 2 バイトでカウントされたバイト数。</returns>
+ -----------------------------------------------------------------------------------------
+</member>
+<member name="M:PCom.Fnc.LeftB(System.String,System.Int32)">
+ -----------------------------------------------------------------------------------------
+ <summary>
+     文字列の左端から指定したバイト数分の文字列を返します。</summary>
+ <param name="stTarget">
+     取り出す元になる文字列。</param>
+ <param name="iByteSize">
+     取り出すバイト数。</param>
+ <returns>
+     左端から指定されたバイト数分の文字列。</returns>
+ -----------------------------------------------------------------------------------------
+</member>
+<member name="M:PCom.Fnc.MidB(System.String,System.Int32)">
+ -----------------------------------------------------------------------------------------
+ <summary>
+     文字列の指定されたバイト位置以降のすべての文字列を返します。</summary>
+ <param name="stTarget">
+     取り出す元になる文字列。</param>
+ <param name="iStart">
+     取り出しを開始する位置。</param>
+ <returns>
+     指定されたバイト位置以降のすべての文字列。</returns>
+ -----------------------------------------------------------------------------------------
+</member>
+<member name="M:PCom.Fnc.MidB(System.String,System.Int32,System.Int32)">
+ -----------------------------------------------------------------------------------------
+ <summary>
+     文字列の指定されたバイト位置から、指定されたバイト数分の文字列を返します。</summary>
+ <param name="stTarget">
+     取り出す元になる文字列。</param>
+ <param name="iStart">
+     取り出しを開始する位置。</param>
+ <param name="iByteSize">
+     取り出すバイト数。</param>
+ <returns>
+     指定されたバイト位置から指定されたバイト数分の文字列。</returns>
+ -----------------------------------------------------------------------------------------
+</member>
+<member name="M:PCom.Fnc.RightB(System.String,System.Int32)">
+ -----------------------------------------------------------------------------------------
+ <summary>
+     文字列の右端から指定されたバイト数分の文字列を返します。</summary>
+ <param name="stTarget">
+     取り出す元になる文字列。</param>
+ <param name="iByteSize">
+     取り出すバイト数。</param>
+ <returns>
+     右端から指定されたバイト数分の文字列。</returns>
+ -----------------------------------------------------------------------------------------
+</member>
+<member name="M:PCom.Fnc.CsvToListDataRow(System.String,System.Boolean)">
+ <summary>
+ CSVファイルをListへ変換（SQLインジェクションを避けるためLinqを使用すること）
+ </summary>
+ <param name="pstrFileNm">ファイルパス</param>
+ <param name="pblnSubject">表題の有無</param>
+ <returns></returns>
+</member>
+<member name="M:PCom.Fnc.CsvToDataTable(System.String,System.Boolean)">
+ <summary>
+ CSVファイルをDataTableへ変換
+ </summary>
+ <param name="pstrFileNm">ファイルパス</param>
+ <param name="pblnSubject">表題の有無</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Fnc.CsvURLToDataTable(System.Uri,System.Boolean)">
+ <summary>
+ 
+ </summary>
+ <param name="pURI"></param>
+ <param name="pblnSubject"></param>
+ <returns></returns>
+</member>
+<member name="M:PCom.Fnc.CsvToDataTableBase(System.String,Microsoft.VisualBasic.FileIO.TextFieldParser,System.Boolean)">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Fnc.DataTableToCsv(System.Data.DataTable,System.String,System.Boolean,System.Boolean)">
+ <summary>
+ DataTableの内容をCSVファイルに保存
+ </summary>
+ <param name="dt">CSVに変換するDataTable</param>
+ <param name="csvPath">保存先のCSVファイルのパス</param>
+ <param name="pblnSubject">列名を出力するかを判定するフラグ</param>
+</member>
+<member name="M:PCom.Fnc.EncloseDoubleQuotesIfNeed(System.String)">
+ <summary>
+ 必要ならば、文字列をダブルクォートで囲む
+ </summary>
+</member>
+<member name="M:PCom.Fnc.EncloseDoubleQuotes(System.String)">
+ <summary>
+ 文字列をダブルクォートで囲む
+ </summary>
+</member>
+<member name="M:PCom.Fnc.NeedEncloseDoubleQuotes(System.String)">
+ <summary>
+ 文字列をダブルクォートで囲む必要があるか調べる
+ </summary>
+</member>
+<member name="M:PCom.Fnc.GetLinesOfTextFile(System.String)">
+ <summary>
+ テキストファイルの行数をカウント
+ </summary>
+ <param name="FileName">カウントするテキストファイルのフルパス</param>
+ <returns>テキストファイルの行数</returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Fnc.SendCGI(System.Uri,System.String@,System.Int32,System.Int32,System.String,System.String)">
+ <summary>
+ CGI送信処理
+ </summary>
+ <param name="pURI">CGIコマンド</param>
+ <param name="intTimeOUT">CGIタイムアウト</param>
+ <param name="intRetryCount">CGIリトライ回数</param>
+ <param name="strUser">ユーザ（認証必要時）</param>
+ <param name="strPassword">パスワード（認証必要時）</param>
+ <returns>送信成功（True）、送信失敗（False）</returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Fnc.SendCGIRecvBinaryMemory(System.Uri,System.Byte[]@,System.Int32,System.Int32,System.String,System.String)">
+ <summary>
+ CGI送信処理【バイナリ】
+ </summary>
+ <param name="pURI">CGIコマンド</param>
+ <param name="contents">応答内容</param>
+ <param name="intTimeOUT">CGIタイムアウト</param>
+ <param name="intRetryCount">CGIリトライ回数</param>
+ <param name="strUser">ユーザ(認証必要時)</param>
+ <param name="strPassword">パスワード(認証必要時)</param>
+ <returns>送信成功(True), 送信失敗(False)</returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Fnc.SendCGIRecvBinaryStream(System.Uri,System.IO.Stream@,System.Int32,System.Int32,System.String,System.String)">
+ <summary>
+ CGI送信処理【ストリーム】
+ </summary>
+ <param name="pURI">CGIコマンド</param>
+ <param name="stream">応答ストリーム</param>
+ <param name="intTimeOUT">CGIタイムアウト</param>
+ <param name="intRetryCount">CGIリトライ回数</param>
+ <param name="strUser">ユーザ(認証必要時)</param>
+ <param name="strPassword">パスワード(認証必要時)</param>
+ <returns>送信成功(True), 送信失敗(False)</returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Fnc.MyPing(System.String,System.Int32,System.Int32)">
+ <summary>
+ Ping送信
+ </summary>
+ <param name="ip"></param>
+ <param name="timeount"></param>
+ <param name="retry"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Fnc.ChgStrToDtm(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="str"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Log.WriteLog(System.String,System.String,System.String,PCom.Log.LogLv,System.String,System.String,System.String,System.String,System.String[])">
+ <summary>
+ ｱﾌﾟﾘｹｰｼｮﾝﾛｸﾞの出力
+ </summary>
+ <param name="strMsg">ｴﾗｰﾒｯｾｰｼﾞ</param>
+ <param name="MessID">ｴﾗｰﾒｯｾｰｼﾞID</param>
+ <param name="MessTitle">ｴﾗｰﾒｯｾｰｼﾞﾀｲﾄﾙ</param>
+ <param name="MessLv">ﾛｸﾞﾚﾍﾞﾙ 1～4(1:警告 2:問合せ 3:注意 4:情報)</param>
+ <param name="LogDir">保存ﾃﾞｨﾚｸﾄﾘ</param>
+ <param name="PriFix">ｴﾗｰﾌｧｲﾙのﾌﾟﾘﾌｨｯｸｽ</param>
+ <param name="FileName">ｴﾗｰﾌｧｲﾙのﾌｧｲﾙ名(ﾌﾟﾘﾌｪｯｸｽ及び日付除く)</param>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Log.GetClassInfo">
+ <summary>
+ 呼出元情報取得
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Msg.MSG_COLOR_ERROR">
+ <summary>
+ メッセージ文字色(エラー)
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Msg.MSG_COLOR_INFO">
+ <summary>
+ メッセージ文字色(情報)
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Msg.MSG_COLOR_WARN">
+ <summary>
+ メッセージ文字色(警告)
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Msg.MSG_CODE_WARN">
+ <summary>
+ メッセージコード(警告)
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Msg.MSG_CODE_QUERY">
+ <summary>
+ メッセージコード(問合せ)
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Msg.MSG_CODE_ERROR">
+ <summary>
+ メッセージコード(注意)
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Msg.MSG_CODE_INFO">
+ <summary>
+ メッセージコード(情報)
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Msg.MSG_LEVEL_NEGLIGIBLE">
+ <summary>
+ メッセージレベル(軽微)
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Msg.MSG_LEVEL_USUALLY">
+ <summary>
+ メッセージレベル(通常)
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Msg.MSG_LEVEL_IMPORTANCE">
+ <summary>
+ メッセージレベル(重要)
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Msg.GetMsg(System.String,System.String[])">
+ <summary>
+ 
+ </summary>
+ <param name="strMsgId"></param>
+ <param name="strMsgParams"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Msg.MyMessageBox(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)">
+ <summary>
+ メッセージボックスの出力 メッセージINIga
+ </summary>
+ <param name="msg"></param>
+ <param name="caption"></param>
+ <param name="buttons"></param>
+ <param name="icon"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Msg.AbendMessageBox(System.Exception)">
+ <summary>
+ 
+ </summary>
+ <param name="ex"></param>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.ERR_STARTUS_SERVER">
+ <summary>
+ エラー状態:サーバ
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.ERR_STARTUS_DB">
+ <summary>
+ エラー状態:DB
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.nologAtStart">
+ <summary>
+ 開始時のログなし
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.APP_NAME">
+ <summary>
+ アプリケーション名称
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.CONNECTION_STRING">
+ <summary>
+ DB接続文字列
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.MSG_FILE">
+ <summary>
+ メッセージファイル
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.MSG_LEVEL">
+ <summary>
+ メッセージレベル
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.LOG_LEVEL">
+ <summary>
+ ログレベル
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.LOG_DAY">
+ <summary>
+ ログ保存日数
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.LOG_ROOT_PATH">
+ <summary>
+ ログルートパス
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.DB_ERROR_MESSAGE">
+ <summary>
+ データベース接続エラーメッセージ
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.APATH">
+ <summary>
+ アプリケーションディレクトリ
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.INI_NAME">
+ <summary>
+ INIファイル
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.INI_MESSAGE">
+ <summary>
+ メッセージファイル
+ </summary>
+</member>
+<member name="F:PCom.Prm.DB_CHECK_INTERVAL">
+ <summary>
+ データベース　チェックインターバル
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.MY_OBJECT_IMAGE">
+ <summary>
+ フォーム作成用イメージ格納用 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.ClsObjectImage._normalImage">
+ <summary>
+ 通常
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.ClsObjectImage._selectImage">
+ <summary>
+ 選択
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.ClsObjectImage._upImage">
+ <summary>
+ UP
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.ClsObjectImage._downImage">
+ <summary>
+ DOWN
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.ClsObjectImage._onImage">
+ <summary>
+ ON
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.ClsObjectImage._offImage">
+ <summary>
+ OFF
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.ClsObjectImage._disabledImage">
+ <summary>
+ DISABLED
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.Prm.ClsObjectImage._onoff">
+ <summary>
+ ON/OFF
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Prm.#cctor">
+ <summary>
+ コンストラクタ
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Prm.IniReadInt(System.String,System.String,System.String,System.Int32@)">
+ <summary>
+ Iniファイル読み込み（値はShort限定）
+ </summary>
+ <param name="strIniFileName">INIﾌｧｲﾙ</param>
+ <param name="strSection">ｾｸｼｮﾝ名</param>
+ <param name="strKeyName">ｷｰ名Index</param>
+ <param name="intDefValue">ﾃﾞﾌｫﾙﾄ値</param>
+ <returns>Short</returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Prm.IniReadStr(System.String,System.String,System.String,System.String@)">
+ <summary>
+ Iniファイル読み込み（値はString限定、1000文字まで）
+ </summary>
+ <param name="strIniFileName">INIﾌｧｲﾙ</param>
+ <param name="strSection">ｾｸｼｮﾝ名</param>
+ <param name="strKeyName">ｷｰ名Index</param>
+ <param name="strDefValue">ﾃﾞﾌｫﾙﾄ値</param>
+ <returns>String</returns>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.Prm.IniWriteStr(System.String,System.String,System.String,System.String@)">
+ <summary>
+ Iniファイル書き込み（値はString限定、1000文字まで）
+ </summary>
+ <param name="strIniFileName">INIﾌｧｲﾙ</param>
+ <param name="strSection">ｾｸｼｮﾝ名</param>
+ <param name="strKeyName">ｷｰ名Index</param>
+ <param name="lpString">値</param>
+ <returns>String</returns>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.TCPClient._ip">
+ <summary>
+ IPアドレス
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.TCPClient._port">
+ <summary>
+ ポート
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.TCPClient._hexfl">
+ <summary>
+ 16進数フラグ
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.TCPClient._threadNo">
+ <summary>
+ スレッド番号（必要な場合のみ）
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.TCPClient._state">
+ <summary>
+ （必要な場合のみ）
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.TCPClient._receiveFlg">
+ <summary>
+ レスポンス待ち　する／しない
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.TCPClient._closeFlg">
+ <summary>
+ 必ずクローズする
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.TCPClient._endString">
+ <summary>
+ 終端文字
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.TCPClient._retry">
+ <summary>
+ リトライ回数
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.TCPClient._connectTimeout">
+ <summary>
+ 接続タイムアウト
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.TCPClient._sendTimeout">
+ <summary>
+ 送信タイムアウト
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.TCPClient._receiveTimeout">
+ <summary>
+ 受信タイムアウト
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.TCPClient._response">
+ <summary>
+ レスポンス
+ </summary>
+</member>
+<member name="F:PCom.TCPClient._callbackResult">
+ <summary>
+ 送受信結果通知メソッド 結果コード、送信内容、受信内容
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:PCom.TCPClient._responceEncoding">
+ <summary>
+ レスポンス受信時の文字エンコード
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.TCPClient.BeginSendReceive(System.String)">
+ <summary>
+ 送受信メソッド
+ </summary>
+ <param name="cmd"></param>
+ <remarks></remarks>
+</member>
+<member name="M:PCom.TCPClient.ReceiveCallback(System.IAsyncResult)">
+ <summary>
+ 非同期受信
+ </summary>
+ <param name="ar"></param>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

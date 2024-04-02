@@ -1,0 +1,6 @@
+from .t_inspection import TInspectionRepository
+from .t_inspection_item import TInspectionItemRepository
+from .m_label import MLabelRepository
+from .m_inspection import MInspectionRepository
+from .m_inspection_item import MInspectionItemRepository
+from .v_inspection_item import VInspectionItemRepository

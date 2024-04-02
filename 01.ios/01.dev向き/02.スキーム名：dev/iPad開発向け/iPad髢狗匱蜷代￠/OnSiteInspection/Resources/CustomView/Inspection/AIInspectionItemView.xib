@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AIInspectionItemView" customModule="OnSiteInspection" customModuleProvider="target">
+            <connections>
+                <outlet property="aiResultText" destination="cLa-gI-DjS" id="RTL-I8-oae"/>
+                <outlet property="contentHeight" destination="VFV-B8-liI" id="Ifn-T8-acD"/>
+                <outlet property="dateText" destination="atM-xk-Hhl" id="MPf-tA-D1B"/>
+                <outlet property="imageAnalysisButton" destination="8Uk-rj-wea" id="B3z-RY-seT"/>
+                <outlet property="inspectionItemName" destination="b5t-Ys-d6P" id="Wuc-Px-X1t"/>
+                <outlet property="ngCommentButton" destination="Zgj-mz-2pV" id="Eou-w0-bBe"/>
+                <outlet property="photographButton" destination="4dU-cM-guV" id="lWS-L1-Gsh"/>
+                <outlet property="thumbnailImageButton" destination="jsR-AU-Fo0" id="BcY-Sk-XT7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="1099" height="356"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wmt-Ov-doS">
+                    <rect key="frame" x="0.0" y="20" width="1099" height="350"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsR-AU-Fo0">
+                            <rect key="frame" x="20" y="80" width="220" height="190"/>
+                            <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="220" id="MtS-Te-1dS"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="bt_view_picture_up"/>
+                            <state key="selected" backgroundImage="bt_view_picture_down"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="3"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRound">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="AccentColor"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onTapEnlargeImageButton:" destination="-1" eventType="touchUpInside" id="HqJ-uj-Q8s"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="AI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5t-Ys-d6P" customClass="CustomLabel" customModule="OnSiteInspection">
+                            <rect key="frame" x="250" y="10" width="839" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9C8-Bt-ene">
+                            <rect key="frame" x="260" y="60" width="279" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMj-8s-75S" customClass="CustomButton" customModule="OnSiteInspection">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
+                                    <color key="backgroundColor" red="0.949013412" green="0.949013412" blue="0.94901353119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="120" id="tlx-6j-Rtg"/>
+                                        <constraint firstAttribute="height" constant="30" id="wjm-1g-Byl"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="日時" image="clock" catalog="system">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atM-xk-Hhl">
+                                    <rect key="frame" x="130" y="0.0" width="149" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgj-mz-2pV" customClass="CustomButton" customModule="OnSiteInspection">
+                            <rect key="frame" x="300" y="280" width="200" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="gbJ-F2-Vao"/>
+                                <constraint firstAttribute="height" constant="50" id="uOj-x1-UUv"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="bt_ng_comment_up"/>
+                            <state key="disabled" backgroundImage="bt_ng_comment_disable"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="magnification">
+                                    <real key="value" value="0.5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onTapNgCommentButton:" destination="-1" eventType="touchUpInside" id="8Ck-Av-j6d"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dU-cM-guV" customClass="CustomButton" customModule="OnSiteInspection">
+                            <rect key="frame" x="909" y="170" width="170" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="170" id="RrC-xG-IaN"/>
+                                <constraint firstAttribute="height" constant="70" id="il2-1x-eFz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="bt_photography_up">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <imageReference key="image" image="bt_photography_up_icon" symbolScale="large"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="36" scale="small"/>
+                            </state>
+                            <state key="disabled" image="bt_photography_disable_icon" backgroundImage="bt_photography_disable"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="leftFixedFlag" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="magnification">
+                                    <real key="value" value="0.69999999999999996"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onTapCameraButton:" destination="-1" eventType="touchUpInside" id="YE1-KF-dYh"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Uk-rj-wea" customClass="CustomButton" customModule="OnSiteInspection">
+                            <rect key="frame" x="909" y="260" width="170" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="cIm-hw-Nsj"/>
+                                <constraint firstAttribute="width" constant="170" id="ntX-qF-TEb"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="bt_analysis_up_icon" backgroundImage="bt_analysis_up">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="36"/>
+                            </state>
+                            <state key="disabled" image="bt_analysis_disable_icon" backgroundImage="bt_analysis_disable"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="magnification">
+                                    <real key="value" value="0.69999999999999996"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="leftFixedFlag" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="onTapAnalysisButton:" destination="-1" eventType="touchUpInside" id="ORw-oF-Jbd"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eMk-la-qeb">
+                            <rect key="frame" x="260" y="105" width="212" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5U9-NE-pla" customClass="CustomButton" customModule="OnSiteInspection">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
+                                    <color key="backgroundColor" red="0.949013412" green="0.949013412" blue="0.94901353119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="nJj-n6-T16"/>
+                                        <constraint firstAttribute="width" constant="120" id="sPx-V9-PuR"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="AI判定" image="brain" catalog="system">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLa-gI-DjS">
+                                    <rect key="frame" x="130" y="0.0" width="82" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="9C8-Bt-ene" firstAttribute="top" secondItem="b5t-Ys-d6P" secondAttribute="bottom" constant="20" id="0yN-UD-ELX"/>
+                        <constraint firstItem="b5t-Ys-d6P" firstAttribute="leading" secondItem="jsR-AU-Fo0" secondAttribute="trailing" constant="10" id="2mn-Z3-FUv"/>
+                        <constraint firstAttribute="bottom" secondItem="8Uk-rj-wea" secondAttribute="bottom" constant="20" id="6cF-la-SNu"/>
+                        <constraint firstAttribute="trailing" secondItem="4dU-cM-guV" secondAttribute="trailing" constant="20" id="CFs-lC-5f1"/>
+                        <constraint firstItem="jsR-AU-Fo0" firstAttribute="centerY" secondItem="Wmt-Ov-doS" secondAttribute="centerY" id="Fpk-sx-tUe"/>
+                        <constraint firstAttribute="bottom" secondItem="Zgj-mz-2pV" secondAttribute="bottom" constant="20" id="GXS-Xt-GVS"/>
+                        <constraint firstItem="Zgj-mz-2pV" firstAttribute="leading" secondItem="Wmt-Ov-doS" secondAttribute="leading" constant="300" id="Poq-le-0On"/>
+                        <constraint firstAttribute="trailing" secondItem="8Uk-rj-wea" secondAttribute="trailing" constant="20" id="UlV-kO-Sdf"/>
+                        <constraint firstAttribute="height" constant="350" id="VFV-B8-liI"/>
+                        <constraint firstItem="8Uk-rj-wea" firstAttribute="top" secondItem="4dU-cM-guV" secondAttribute="bottom" constant="20" id="Z5H-dA-8SU"/>
+                        <constraint firstAttribute="trailing" secondItem="b5t-Ys-d6P" secondAttribute="trailing" constant="10" id="aUx-vz-uMA"/>
+                        <constraint firstItem="jsR-AU-Fo0" firstAttribute="top" secondItem="Wmt-Ov-doS" secondAttribute="top" constant="80" id="e6m-82-mpj"/>
+                        <constraint firstItem="eMk-la-qeb" firstAttribute="top" secondItem="9C8-Bt-ene" secondAttribute="bottom" constant="15" id="kmz-p8-AzT"/>
+                        <constraint firstItem="jsR-AU-Fo0" firstAttribute="leading" secondItem="Wmt-Ov-doS" secondAttribute="leading" constant="20" id="qjb-qa-4sn"/>
+                        <constraint firstItem="b5t-Ys-d6P" firstAttribute="top" secondItem="Wmt-Ov-doS" secondAttribute="top" constant="10" id="tFa-S6-dCW"/>
+                        <constraint firstItem="9C8-Bt-ene" firstAttribute="leading" secondItem="jsR-AU-Fo0" secondAttribute="trailing" constant="20" id="thi-28-NsB"/>
+                        <constraint firstItem="eMk-la-qeb" firstAttribute="leading" secondItem="jsR-AU-Fo0" secondAttribute="trailing" constant="20" id="uX8-ro-EUE"/>
+                        <constraint firstAttribute="bottom" secondItem="jsR-AU-Fo0" secondAttribute="bottom" constant="80" id="zkR-dP-1ZB"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Wmt-Ov-doS" secondAttribute="trailing" id="LGS-7L-cm0"/>
+                <constraint firstItem="Wmt-Ov-doS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="MHR-Zi-04k"/>
+                <constraint firstItem="Wmt-Ov-doS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="mrN-fS-jTW"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRound">
+                    <real key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="157.91366906474821" y="-219.60431654676259"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="brain" catalog="system" width="128" height="107"/>
+        <image name="bt_analysis_disable" width="300" height="120"/>
+        <image name="bt_analysis_disable_icon" width="54" height="45"/>
+        <image name="bt_analysis_up" width="300" height="120"/>
+        <image name="bt_analysis_up_icon" width="54" height="45"/>
+        <image name="bt_ng_comment_disable" width="460" height="100"/>
+        <image name="bt_ng_comment_up" width="460" height="100"/>
+        <image name="bt_photography_disable" width="300" height="120"/>
+        <image name="bt_photography_disable_icon" width="46" height="40"/>
+        <image name="bt_photography_up" width="300" height="120"/>
+        <image name="bt_photography_up_icon" width="46" height="40"/>
+        <image name="bt_view_picture_down" width="300" height="220"/>
+        <image name="bt_view_picture_up" width="300" height="220"/>
+        <image name="clock" catalog="system" width="128" height="123"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

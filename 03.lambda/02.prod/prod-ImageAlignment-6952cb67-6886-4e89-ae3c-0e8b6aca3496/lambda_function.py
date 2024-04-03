@@ -18,6 +18,7 @@ from model import (
     DatabaseConnection,
     TInspectionRepository,
     VInspectionItemRepository,
+    MInspectionRepository,
     TInspection,
     MInspection,
 )
@@ -173,15 +174,15 @@ def get_response_data_by_send_flag(tx) -> list[dict]:
     点検情報を取得し、レスポンス情報を取得する関数(未送信データ全ての場合)
     """
     # 未送信のレコードを取得
-    records = TInspectionRepository.find_by_is_send(tx)
+    inspections = TInspectionRepository.find_by_is_send(tx)
 
     ret = []
 
     recordCount = 0
 
-    for record in records:
-        # tupleのアンパック
-        inspection, master = record
+    for inspection in inspections:
+        
+        master = MInspectionRepository.find_by_id(tx, inspection.inspection_name_id)
 
         # レコード件数の取得
         recordCount += len(VInspectionItemRepository.find_by_inspection_id(tx, inspection.inspection_id))

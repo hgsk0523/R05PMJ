@@ -30,6 +30,7 @@ class TInspectionRepository():
                 .filter(
                     TInspection.inspection_id == inspection_id
                 )\
+                .with_for_update()\
                 .one_or_none()
 
     @staticmethod
@@ -45,25 +46,31 @@ class TInspectionRepository():
                     TInspection.worksheet_code == worksheet_code,
                     TInspection.receipt_confirmation_date == receipt_confirmation_date
                 )\
+                .with_for_update()\
                 .one_or_none()
-
+    
     @staticmethod
-    def find_by_is_send(transaction, is_send: bool = False) -> list[tuple[TInspection, MInspection]] | None:
+    def find_by_is_send(transaction, is_send: bool = False) -> list[TInspection] | None:
         """
         指定された連携フラグのレコードを取得する
 
         Returns:
-            TInspection: 点検情報のリスト
+            TInspection: 点検情報
         """
         status_list = [InspectionStatus.REINSPECTION, InspectionStatus.CONDITIONAL_COMPLETE, InspectionStatus.INSPECTION_COMPLETED]
 
-        return transaction.query(TInspection, MInspection)\
+        return transaction.query(TInspection)\
                 .filter(
-                    TInspection.is_send == is_send,
-                    TInspection.status.in_(status_list)
+                    TInspection.inspection_id.in_(
+                        transaction.query(TInspection.inspection_id)
+                        .filter(
+                            TInspection.is_send == is_send,
+                            TInspection.status.in_(status_list)
+                            )\
+                        )
                 )\
-                .join(MInspection, TInspection.inspection_name_id == MInspection.inspection_name_id)\
                 .order_by(TInspection.updated_at)\
+                .with_for_update()\
                 .all()
 
     @staticmethod

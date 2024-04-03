@@ -187,8 +187,8 @@ def update_inspection(tx, inspection_id: int, body: dict):
 
     # 該当レコードの更新
     entity.company_code = body.get('companyCode')
-    entity.inspection_date = body.get('inspectionDate')
-    
+    entity.inspection_date = str(body.get('inspectionDate'))
+
 @api_exception_handler(logger)
 def main() -> Response:
     """
@@ -230,7 +230,7 @@ def main() -> Response:
             image_path = item_dict.get('s3ImagePath')
             obj  = S3.split_bucket_path(image_path) if image_path else (None, None)
             item_dict['s3ImagePath'] = obj[1]
-        
+
         # 点検テーブルの更新処理
         update_inspection(tx, inspection.inspection_id, body)
 
